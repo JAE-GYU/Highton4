@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
         
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('creator_id');
             $table->string('title');
             $table->string('description');
             $table->string('location');
@@ -24,6 +25,7 @@ class CreateEventsTable extends Migration
             $table->dateTime('event_date');
             $table->string('event_pic');
             $table->string('phone');
+            $table->integer('status')->default(0); // 0 모집 , 1 종료 , 2 취소
             $table->timestamps();
         });
     }

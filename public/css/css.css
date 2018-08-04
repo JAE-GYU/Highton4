@@ -1,0 +1,146 @@
+/* Default CSS */
+
+/* reset CSS */
+* {
+	margin: 0 auto;
+	padding: 0;
+	font-family: "맑은 고딕";
+	box-sizing: border-box;
+}
+
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	line-height: 1;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* float */
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+}
+
+/* position */
+.pa {
+	position: absolute;
+}
+
+.pr {
+	position: relative;
+}
+
+.pf {
+	position: fixed;
+}
+
+/* grid */
+[class*='col-'] {
+	position: relative;
+	float: left;
+	padding: 10px;
+}
+
+.col-clear {
+	padding: 0;
+}
+
+.col-1 {
+	width: calc(100% / 12 * 1);
+	flex : calc(100% / 12 * 1);
+}
+
+.col-2 {
+	width: calc(100% / 12 * 2);
+	flex : calc(100% / 12 * 2);
+}
+
+.col-3 {
+	width: calc(100% / 12 * 3);
+	flex : calc(100% / 12 * 3);
+}
+
+.col-4 {
+	width: calc(100% / 12 * 4);
+	flex : calc(100% / 12 * 4);
+}
+
+.col-5 {
+	width: calc(100% / 12 * 5);
+	flex : calc(100% / 12 * 5);
+}
+
+.col-6 {
+	width: calc(100% / 12 * 6);
+	flex : calc(100% / 12 * 6);
+}
+
+.col-7 {
+	width: calc(100% / 12 * 7);
+	flex : calc(100% / 12 * 7);
+}
+
+.col-8 {
+	width: calc(100% / 12 * 8);
+	flex : calc(100% / 12 * 8);
+}
+
+.col-9 {
+	width: calc(100% / 12 * 9);
+	flex : calc(100% / 12 * 9);
+}
+
+.col-10 {
+	width: calc(100% / 12 * 10);
+	flex : calc(100% / 12 * 10);
+}
+
+.col-11 {
+	width: calc(100% / 12 * 11);
+	flex : calc(100% / 12 * 11);
+}
+
+.col-12 {
+	width: calc(100% / 12 * 12);
+	flex : calc(100% / 12 * 12);
+}
+
+/* container */
+.container-fluid {
+	width: 100%;
+}
+
+.container {
+	width: 80%;
+}
+
+/* height */
+.h {
+	height: 100%;
+}
+
+.h50 {
+	height: 50%;
+}

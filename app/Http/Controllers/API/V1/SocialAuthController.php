@@ -20,7 +20,7 @@ class SocialAuthController extends Controller
 
         $user = User::where(['provider' => 'facebook', 'provider_id' => $providerUser->getId()])->first();
 
-        if($user) {
+        if ($user) {
             $data = [
                 'provider' => $user->provider,
                 'provider_id' => $user->provider_id,
@@ -61,13 +61,13 @@ class SocialAuthController extends Controller
 
             return response()->json([
                 'data' => [
-                    'code' => 200,
+                    'code' => 201,
                     'message' => [
                         'success',
                         $data
                     ],
                 ]
-            ],200,[],JSON_UNESCAPED_UNICODE);
+            ],201,[],JSON_UNESCAPED_UNICODE);
         }
 
     }
@@ -83,7 +83,7 @@ class SocialAuthController extends Controller
 
         $user = User::where(['provider' => 'google', 'provider_id' => $providerUser->getId()])->first();
 
-        if($user) {
+        if ($user) {
             $data = [
                 'provider' => $user->provider,
                 'provider_id' => $user->provider_id,
@@ -124,13 +124,13 @@ class SocialAuthController extends Controller
 
             return response()->json([
                 'data' => [
-                    'code' => 200,
+                    'code' => 201,
                     'message' => [
                         'success',
                         $data
                     ],
                 ]
-            ],200,[],JSON_UNESCAPED_UNICODE);
+            ],201,[],JSON_UNESCAPED_UNICODE);
         }
     }    
 }

@@ -17,16 +17,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// 회원 관련
 Route::group(['prefix' => '/V1', 'namespace' => 'Api\V1'], function(){
     // 회원 컨트롤러
     Route::resource('user','UserController')->except(['index', 'create', 'edit']); 
 
     // 소셜 로그인
-    Route::get('/facebook/redirect', 'SocialAuthController@facebookRedirect')->middleware('web');
-    Route::get('/facebook/callback', 'SocialAuthController@facebookCallback')->middleware('web');
-    Route::get('/google/redirect', 'SocialAuthController@googleRedirect')->middleware('web');
-    Route::get('/google/callback', 'SocialAuthController@googleCallback')->middleware('web');
+    Route::group(['middleware' => 'web'],function(){
+        Route::get('/facebook/redirect', 'SocialAuthController@facebookRedirect');
+        Route::get('/facebook/callback', 'SocialAuthController@facebookCallback');
+        Route::get('/google/redirect', 'SocialAuthController@googleRedirect');
+        Route::get('/google/callback', 'SocialAuthController@googleCallback');
+    });    
+
+    // 모임 컨트롤러
+    Route::resource('event','EventController')->except(['create', 'edit']);
+    Route::get('search/{search}','EventController@search');
+    Route::get('event/participant/{event_id}','EventAttendController@get');
+    Route::post('event/participant','EventAttendController@store');
 });
 
 // 로그인

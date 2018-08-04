@@ -69,7 +69,7 @@ class UserController extends Controller
 
         $user = User::where(['email' => $inputVal['email']])->first();
 
-        if($user) {
+        if ($user) {
             return response()->json([
                 'error' => [
                     'code' => 400,
@@ -84,13 +84,13 @@ class UserController extends Controller
 
         return response()->json([
             'data' => [
-                'code' => 200,
+                'code' => 201,
                 'message' => [
                     'success',
                     $id
                 ],
             ]
-        ],200,[],JSON_UNESCAPED_UNICODE);
+        ],201,[],JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -157,7 +157,8 @@ class UserController extends Controller
             'data' => [
                 'code' => 200,
                 'message' => [
-                    'success'
+                    'success',
+                    $id
                 ],
             ]
         ],200,[],JSON_UNESCAPED_UNICODE);
