@@ -64,20 +64,14 @@
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">            
+    <body>        
+        <div class="flex-center position-ref full-height" style="position: absolute; z-index: 1000;top: 0;width: 100%;">            
             <div class="content">
                 <div class="title m-b-md">
                     <img src="/img/logo.svg" alt="logo" style="width: 100%">
                 </div>
 
-                {{--  <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>  --}}
+                <a href="#" style="display: inline-block;margin-top: 10px;padding: 10px 40px;border-radius: 50px;font-weight: bold;border: 2px solid #fc087d;color: #fc087d;text-decoration: none">다운로드</a>                
             </div>
         </div>
     </body>
